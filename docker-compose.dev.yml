@@ -1,0 +1,53 @@
+# Development docker-compose with hot reload
+
+version: "3.9"
+
+services:
+  bot-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mednear-bot-dev
+    command: python -m bot.main
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+      - ./logs:/app/logs
+    environment:
+      - APP_ENVIRONMENT=development
+      - BOT_DEBUG=True
+    depends_on:
+      - postgres-dev
+      - redis-dev
+    networks:
+      - mednear-dev
+
+  postgres-dev:
+    image: postgres:16-alpine
+    container_name: mednear-postgres-dev
+    environment:
+      POSTGRES_DB: mednear_ai_dev
+      POSTGRES_USER: mednear_user
+      POSTGRES_PASSWORD: dev_pass
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - mednear-dev
+
+  redis-dev:
+    image: redis:7-alpine
+    container_name: mednear-redis-dev
+    ports:
+      - "6379:6379"
+    networks:
+      - mednear-dev
+
+volumes:
+  postgres_dev_data:
+
+networks:
+  mednear-dev:
+    driver: bridge
