@@ -259,13 +259,18 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## 📞 Support
 
-- 📧 Email: support@mednear.ai
-- 💬 Telegram: [@MedNearSupport](https://t.me/MedNearSupport)
-- 🌐 Website: https://mednear.ai
+If you have questions, encounter issues, or need help with MedNear AI:
+
+- 📧 **Email:** [f91186645@gmail.com](mailto:f91186645@gmail.com)
+- 💬 **Telegram:** [@FirdavsVIP](https://t.me/FirdavsVIP)
+
+Response time: usually within 24 hours.
 
 ## 👥 Team
 
 Built with ❤️ by the **KRYZENSYS** team.
+
+**Lead Developer:** Firdavs ([@FirdavsVIP](https://t.me/FirdavsVIP))
 
 ---
 
